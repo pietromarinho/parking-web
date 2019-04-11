@@ -1,0 +1,55 @@
+<div class="modal fade generic-modal" id="vehicleExitModal" tabindex="-1" role="dialog"
+  aria-labelledby="vehicleExitModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="card-header card-header-icon" data-background-color="parking">
+        <i class="material-icons">add</i>
+      </div>
+      <h5 class="modal-title">
+        <strong>Gerar saída</strong>
+      </h5>
+
+      <div class="modal-body">
+
+
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="info">
+              <label>Placa</label>
+              <h5> {{obj.car?.plate}} </h5>
+              <hr>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="info">
+              <label>Marca</label>
+              <h5> {{obj.car?.manufacturer}} </h5>
+              <hr>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="info">
+              <label>Modelo</label>
+              <h5> {{obj.car?.model}} </h5>
+              <hr>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="info">
+              <label>Cor</label>
+              <h5> {{obj.car?.color}} </h5>
+              <hr>
+            </div>
+          </div>
+        </div>
+        <div class="row btn-space">
+          <button (click)="updateOrCreate('#vehicleExitModal')" type=" submit"
+            class='btn btn-finish btn-fill btn-round btn-parking pull-right'>Gerar acesso</button>
+
+          <button (click)="closeModal()" type="button" class='btn btn-round  pull-right'>Voltar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

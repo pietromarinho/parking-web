@@ -36,9 +36,14 @@ export const ROUTES: RouteInfo[] = [
         icontype: 'assignment',
     }, {
         path: '/register',
-        title: 'Carros Estacionados',
-        type: 'link',
-        icontype: 'assignment',
+        title: 'Registros',
+        type: 'sub',
+        icontype: 'person',
+        collapse: 'Registros',
+        children: [
+            { path: 'parked_cars', title: 'Carros Estacionados', ab: 'CE' },
+            { path: 'historic', title: 'Histórico', ab: 'H' },
+        ]
     },
 ];
 @Component({

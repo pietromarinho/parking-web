@@ -1,3 +1,70 @@
-<p>
-  register-list works!
-</p>
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header card-header-icon" data-background-color="parking">
+            <i class="material-icons">list</i>
+          </div>
+          <div class="card-content">
+            <h5 class="card-title">
+              <strong>Lista de veículos estacionados</strong>
+            </h5>
+
+            <div class="row">
+              <div class="col-sm-6 pull-right">
+                <mat-form-field class="busca">
+                  <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Buscar por nome">
+                  <i class="material-icons">search</i>
+                </mat-form-field>
+              </div>
+            </div>
+
+            <div class="example-container">
+
+              <mat-table #table [dataSource]="dataSource" matSort>
+                <ng-container matColumnDef="plate">
+                  <mat-header-cell *matHeaderCellDef mat-sort-header> Placa
+                  </mat-header-cell>
+                  <mat-cell *matCellDef="let item"> {{ item.car.plate }} </mat-cell>
+                </ng-container>
+                <ng-container matColumnDef="manufacturer">
+                  <mat-header-cell *matHeaderCellDef mat-sort-header> Marca
+                  </mat-header-cell>
+                  <mat-cell *matCellDef="let item"> {{ item.car.manufacturer }} </mat-cell>
+                </ng-container>
+                <ng-container matColumnDef="model">
+                  <mat-header-cell *matHeaderCellDef mat-sort-header> Modelo
+                  </mat-header-cell>
+                  <mat-cell *matCellDef="let item"> {{ item.car.model }} </mat-cell>
+                </ng-container>
+                <ng-container matColumnDef="color">
+                  <mat-header-cell *matHeaderCellDef mat-sort-header> Cor
+                  </mat-header-cell>
+                  <mat-cell *matCellDef="let item"> {{ item.car.color }} </mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="acoes">
+                  <mat-header-cell class="text-right" *matHeaderCellDef> Ações </mat-header-cell>
+                  <mat-cell class="text-right acoes" *matCellDef="let item">
+                    <button (click)="showExitModal(item)" class="btn btn-simple btn-info btn-icon edit"
+                      matTooltip="Editar" [matTooltipPosition]="'left'">
+                      <i class="material-icons">edit</i>
+                    </button>
+                  </mat-cell>
+                </ng-container>
+
+                <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                <mat-row *matRowDef="let item; columns: displayedColumns;">
+                </mat-row>
+              </mat-table>
+
+              <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+            </div>
+          </div>
+          <app-vehicle-exit #vehicleExitModal></app-vehicle-exit>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

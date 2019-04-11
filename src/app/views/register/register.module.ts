@@ -6,6 +6,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MdModule } from 'app/md/md.module';
 import { MaterialModule } from 'app/app.module';
 import { RegisterListComponent } from './register-list/register-list.component';
+import { VehicleExitComponent } from './vehicle-exit/vehicle-exit.component';
+import { RegisterOutListComponent } from './register-out-list/register-out-list.component';
 
 @NgModule({
   imports: [
@@ -16,6 +18,6 @@ import { RegisterListComponent } from './register-list/register-list.component';
     MdModule,
     MaterialModule,
   ],
-  declarations: [RegisterListComponent]
+  declarations: [RegisterListComponent, VehicleExitComponent, RegisterOutListComponent]
 })
 export class RegisterModule { }

@@ -1,0 +1,57 @@
+<div class="modal fade generic-modal" id="vehicleModal" tabindex="-1" role="dialog" aria-labelledby="vehicleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="card-header card-header-icon" data-background-color="parking">
+        <i *ngIf="edit" class="material-icons">edit</i>
+        <i *ngIf="!edit" class="material-icons">add</i>
+      </div>
+      <h5 class="modal-title">
+        <strong *ngIf="edit">Editar Veículo</strong>
+        <strong *ngIf="!edit">Novo Veículo</strong>
+      </h5>
+
+      <div class="modal-body">
+
+        <form class="form-horizontal" #vehicleForm="ngForm">
+
+          <div class="row">
+            <div class="col-sm-6">
+              <mat-form-field>
+                <input matInput [(ngModel)]="obj.plate" placeholder="Placa" name="plate" type="text" minlength="7"
+                  maxlength="7" required>
+              </mat-form-field>
+
+              <mat-form-field>
+                <input matInput [(ngModel)]="obj.color" placeholder="Cor" name="color" type="text" maxlength="255"
+                  required>
+              </mat-form-field>
+            </div>
+
+            <div class="col-sm-6">
+              <mat-form-field>
+                <input matInput [(ngModel)]="obj.manufacturer" placeholder="Marca" name="manufacturer" type="text"
+                  maxlength="255" required>
+              </mat-form-field>
+
+              <mat-form-field>
+                <input matInput [(ngModel)]="obj.model" placeholder="Modelo" name="model" type="text" maxlength="255"
+                  required>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row btn-space">
+            <button (click)="clearForm(vehicleForm)" type="button" class='btn btn-round  pull-left'>Limpar</button>
+
+            <button (click)="updateOrCreate('#vehicleModal')" type="submit"
+              class='btn btn-finish btn-fill btn-round btn-parking pull-right'
+              [disabled]="!vehicleForm.form.valid">Salvar</button>
+
+            <button (click)="closeModal()" type="button" class='btn btn-round  pull-right'>Voltar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

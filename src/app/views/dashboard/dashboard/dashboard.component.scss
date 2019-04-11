@@ -1,0 +1,19 @@
+ul {
+    li {
+        &.listSup {
+            border-radius: 30px;
+            padding-left: 6px;
+        }
+    }
+}
+
+li {
+    &.title_table {
+        width: 128px;
+        padding: 0 !important;
+    }
+}
+
+p {
+    font-size: 15px;
+}

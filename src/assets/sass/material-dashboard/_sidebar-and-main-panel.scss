@@ -23,7 +23,7 @@
         max-height: 42px;
 
         img {
-            width: 40px;
+            width: 60px;
             top: 15px;
             left: 17px;
             padding-right: 5px;
@@ -257,7 +257,7 @@
 
         .simple-text {
             text-transform: uppercase;
-            padding: $padding-small-vertical $padding-zero;
+            padding: 10px 0px 0px 50px;
             display: block;
             font-size: $font-size-large;
             color: $black-color;

@@ -15,6 +15,10 @@ export const AppRoutes: Routes = [
                 path: 'vehicle',
                 loadChildren: './views/vehicle/vehicle.module#VehicleModule'
             },
+            {
+                path: 'register',
+                loadChildren: './views/register/register.module#RegisterModule'
+            },
         ]
     },
     {

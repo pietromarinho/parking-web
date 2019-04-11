@@ -39,4 +39,10 @@ export class VehicleFormComponent extends GenericFormComponent<Vehicle, VehicleS
   closeModal(): void {
     $('#vehicleModal').modal('hide');
   }
+
+  setUpperCase(input, model): void {
+    input.value = input.value.toUpperCase();
+    this.obj.plate = input.value.toUpperCase();
+  }
+
 }

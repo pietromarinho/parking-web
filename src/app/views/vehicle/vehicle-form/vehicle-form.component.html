@@ -19,8 +19,9 @@
           <div class="row">
             <div class="col-sm-6">
               <mat-form-field>
-                <input matInput [(ngModel)]="obj.plate" placeholder="Placa" name="plate" type="text" minlength="7"
-                  maxlength="7" required>
+                <input matInput #placa id="placa" [(ngModel)]="obj.plate" pattern="[A-Z]{2}[0-9]{2}[A-Z]{1}[0-9]{2}"
+                  (keyup)="setUpperCase(placa)" placeholder="Placa" name="plate" type="text" class="upper" maxlength="7"
+                  required>
               </mat-form-field>
 
               <mat-form-field>

@@ -54,24 +54,7 @@ export class CrudService<T extends any> extends RestService {
   }
 
   public delete(id: string): Observable<any> {
-    const deleteURL = this.baseURL + 'id/';
+    const deleteURL = this.baseURL;
     return this.remove(deleteURL, id);
   }
-
-  public enable(id: string): Observable<any> {
-    const enableURL = this.baseURL + 'enable/' + id;
-
-    return this.post(enableURL);
-  }
-
-  public disable(id: string): Observable<any> {
-    const disableURL = this.baseURL + 'disable/' + id;
-    return this.post(disableURL);
-  }
-
-  public changeStatus(id: string): Observable<any> {
-    const changeStatusURL = this.baseURL + 'changestatus/' + id;
-    return this.put(changeStatusURL, null);
-  }
-
 }

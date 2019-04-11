@@ -7,6 +7,7 @@ import { VehicleRouter } from './vehicle.routing';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MdModule } from 'app/md/md.module';
 import { MaterialModule } from 'app/app.module';
+import { VehicleEntranceComponent } from './vehicle-entrance/vehicle-entrance.component';
 
 @NgModule({
   imports: [
@@ -17,6 +18,6 @@ import { MaterialModule } from 'app/app.module';
     MdModule,
     MaterialModule,
   ],
-  declarations: [VehicleFormComponent, VehicleListComponent]
+  declarations: [VehicleFormComponent, VehicleListComponent, VehicleEntranceComponent]
 })
 export class VehicleModule { }

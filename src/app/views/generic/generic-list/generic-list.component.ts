@@ -110,69 +110,11 @@ export abstract class GenericListComponent<TModel extends any, TService extends 
         );
     }
 
-    changeStatus(obj: TModel) {
-        this.service.changeStatus(obj.id).subscribe(
-            success => {
-                this.refreshData();
-            },
-            error => {
-                console.log(`erro: ${error}`);
-            }
-        );
-    }
-
-    enable(obj: TModel) {
-        this.service.enable(obj.id).subscribe(
-            success => {
-                this.refreshData();
-
-                this.toast(this.recordEnabledMsg, MessageType.SUCCESS);
-            },
-            error => {
-                console.log(`erro: ${error}`);
-            }
-        );
-    }
-
-    disable(obj: TModel) {
-        this.service.disable(obj.id).subscribe(
-            success => {
-                this.refreshData();
-
-                this.toast(this.recordDisabledMsg, MessageType.SUCCESS);
-            },
-            error => {
-                console.log(`erro: ${error}`);
-            }
-        );
-    }
-
     deleteItem(obj: TModel) {
         swal(this.swalContent(SwalType.DELETE)
         ).then(function () {
             this.delete(obj);
         }.bind(this)).catch(swal.noop);
-    }
-
-    disableItem(obj: TModel) {
-        swal(this.swalContent(SwalType.DISABLE)
-        ).then(function () {
-            this.disable(obj);
-        }.bind(this),
-            (dismiss) => {
-                if (dismiss === 'cancel') {
-                    this.refreshData();
-                }
-            }).catch(swal.noop);
-        this.refreshData();
-    }
-
-    enableDisable(obj: TModel) {
-        if (obj.status === 'ATIVO') {
-            this.disableItem(obj);
-        } else {
-            this.enable(obj);
-        }
     }
 
     swalContent(text: string, type = 'warning'): any {

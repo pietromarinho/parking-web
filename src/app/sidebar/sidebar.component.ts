@@ -35,8 +35,8 @@ export const ROUTES: RouteInfo[] = [
         type: 'link',
         icontype: 'assignment',
     }, {
-        path: '/price',
-        title: 'Preços',
+        path: '/register',
+        title: 'Carros Estacionados',
         type: 'link',
         icontype: 'assignment',
     },

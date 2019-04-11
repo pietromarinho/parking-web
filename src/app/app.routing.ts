@@ -16,8 +16,8 @@ export const AppRoutes: Routes = [
                 loadChildren: './views/vehicle/vehicle.module#VehicleModule'
             },
             {
-                path: 'price',
-                loadChildren: './views/price/price.module#PriceModule'
+                path: 'register',
+                loadChildren: './views/register/register.module#RegisterModule'
             },
         ]
     },

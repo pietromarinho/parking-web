@@ -54,6 +54,10 @@
                       [matTooltipPosition]="'left'" (click)="showModal(item)">
                       <i class="material-icons">edit</i>
                     </button>
+                    <button class="btn btn-simple btn-success btn-icon edit" matTooltip="Gerar Acesso"
+                      [matTooltipPosition]="'left'" (click)="showEntranceModal(item)">
+                      <i class="material-icons">input</i>
+                    </button>
                     <button class="btn btn-simple btn-danger btn-icon edit" matTooltip="Excluir"
                       [matTooltipPosition]="'left'" data-toggle="modal" (click)="deleteItem(item)">
                       <i class="material-icons">delete</i>
@@ -70,6 +74,7 @@
             </div>
           </div>
           <app-vehicle-form #vehicleModal></app-vehicle-form>
+          <app-vehicle-entrance #vehicleEntranceModal></app-vehicle-entrance>
         </div>
       </div>
     </div>

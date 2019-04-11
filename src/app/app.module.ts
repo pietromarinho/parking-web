@@ -24,6 +24,7 @@ import { NavbarModule } from './shared/navbar/navbar.module';
 import { SidebarModule } from './sidebar/sidebar.module';
 import { VehicleService } from './service/vehicle/vehicle.service';
 import { PriceService } from './service/price/price.service';
+import { EntranceService } from './service/entrance/entrance.service';
 
 export function httpFactory(xhrBackend: XHRBackend, requestOptions: RequestOptions, loaderService: LoaderService): Http {
   return new InterceptedHttp(xhrBackend, requestOptions, loaderService);
@@ -102,6 +103,7 @@ export class MaterialModule { }
     CpfService,
     VehicleService,
     PriceService,
+    EntranceService
   ],
   bootstrap: [AppComponent]
 })

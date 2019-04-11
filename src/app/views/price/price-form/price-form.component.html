@@ -1,0 +1,57 @@
+<div class="modal fade generic-modal" id="priceModal" tabindex="-1" role="dialog" aria-labelledby="priceModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="card-header card-header-icon" data-background-color="parking">
+        <i *ngIf="edit" class="material-icons">edit</i>
+        <i *ngIf="!edit" class="material-icons">add</i>
+      </div>
+      <h5 class="modal-title">
+        <strong *ngIf="edit">Editar Preço</strong>
+        <strong *ngIf="!edit">Novo Preço</strong>
+      </h5>
+
+      <div class="modal-body">
+
+        <form class="form-horizontal" #priceForm="ngForm">
+
+          <div class="row">
+            <div class="col-sm-6">
+              <mat-form-field>
+                <input matInput [(ngModel)]="obj.day" placeholder="Dia" name="day" type="text" minlength="255"
+                  maxlength="7" required>
+              </mat-form-field>
+
+              <mat-form-field>
+                <input matInput [(ngModel)]="obj.start" placeholder="Hora de início" name="start" type="text"
+                  maxlength="255" required>
+              </mat-form-field>
+            </div>
+
+            <div class="col-sm-6">
+              <mat-form-field>
+                <input matInput [(ngModel)]="obj.end" placeholder="Hora do fim" name="end" type="text" maxlength="255"
+                  required>
+              </mat-form-field>
+
+              <mat-form-field>
+                <input matInput [(ngModel)]="obj.value" placeholder="Valor (Por hora)" name="value" type="number"
+                  required>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row btn-space">
+            <button (click)="clearForm(priceForm)" type="button" class='btn btn-round  pull-left'>Limpar</button>
+
+            <button (click)="updateOrCreate('#priceModal')" type="submit"
+              class='btn btn-finish btn-fill btn-round btn-parking pull-right'
+              [disabled]="!priceForm.form.valid">Salvar</button>
+
+            <button (click)="closeModal()" type="button" class='btn btn-round  pull-right'>Voltar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -34,6 +34,11 @@ export const ROUTES: RouteInfo[] = [
         title: 'Veículos',
         type: 'link',
         icontype: 'assignment',
+    }, {
+        path: '/price',
+        title: 'Preços',
+        type: 'link',
+        icontype: 'assignment',
     },
 ];
 @Component({

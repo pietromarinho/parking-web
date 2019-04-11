@@ -23,6 +23,7 @@ import { MadiaAttachmentModule } from './shared/media-attachment/media-attachmen
 import { NavbarModule } from './shared/navbar/navbar.module';
 import { SidebarModule } from './sidebar/sidebar.module';
 import { VehicleService } from './service/vehicle/vehicle.service';
+import { PriceService } from './service/price/price.service';
 
 export function httpFactory(xhrBackend: XHRBackend, requestOptions: RequestOptions, loaderService: LoaderService): Http {
   return new InterceptedHttp(xhrBackend, requestOptions, loaderService);
@@ -100,6 +101,7 @@ export class MaterialModule { }
     LoaderService,
     CpfService,
     VehicleService,
+    PriceService,
   ],
   bootstrap: [AppComponent]
 })

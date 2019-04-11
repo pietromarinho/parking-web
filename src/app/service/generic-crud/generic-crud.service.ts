@@ -54,7 +54,7 @@ export class CrudService<T extends any> extends RestService {
   }
 
   public delete(id: string): Observable<any> {
-    const deleteURL = this.baseURL + 'id/';
+    const deleteURL = this.baseURL;
     return this.remove(deleteURL, id);
   }
 

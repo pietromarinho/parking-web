@@ -5,6 +5,7 @@ import { NavbarComponent } from './navbar.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule, MatSelectModule, MatTooltipModule, MatInputModule } from '@angular/material';
 import { MdModule } from 'app/md/md.module';
+import { PriceTableModule } from '../price-table/price-table.component';
 
 @NgModule({
     imports: [
@@ -17,6 +18,7 @@ import { MdModule } from 'app/md/md.module';
         MdModule,
         MatButtonModule,
         MatSelectModule,
+        PriceTableModule
     ],
     declarations: [NavbarComponent],
     exports: [NavbarComponent]

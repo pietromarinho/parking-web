@@ -15,5 +15,63 @@
             </button>
             <a class="navbar-brand" href="{{getPath()}}"> {{getTitle()}} </a>
         </div>
+        <div class="collapse navbar-collapse justify-content-end mt-2 mr-3 " id="navigation">
+            <div (window:resize)="onResize($event)">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="material-icons">person</i>
+                            <p class="hidden-lg hidden-md">Perfil</p>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a (click)="showPriceDetails()" style="cursor: pointer">Tabela de Preços</a>
+                            </li>
+                            <li>
+                                <a style="cursor: pointer">Gerar relátorio</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </div>
 </nav>
+
+<!-- <div class="card">
+    <div class="modal fade generic-modal" id="priceDetailsModal" tabindex="-1" role="dialog"
+        aria-labelledby="priceDetailsModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content change-modal">
+
+                <div class="card-header card-header-icon" data-background-color="spare">
+                    <i class="material-icons">vpn_key</i>
+                </div>
+                <h5 class="modal-title">
+                    <strong>Alterar Senha</strong>
+                    <button type="button" class="close fix-close" data-dismiss="modal" aria-hidden="true">
+                        <i class="material-icons">clear</i>
+                    </button>
+                </h5>
+
+                <div class="modal-body" *ngIf="opened">
+                    <strong>Teste</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<div class="modal fade generic-modal" id="priceDetailsModal" tabindex="1" role="dialog"
+    aria-labelledby="priceDetailsModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <button type="button" class="close fix-close" data-dismiss="modal" aria-hidden="true">
+                <i class="material-icons">clear</i>
+            </button>
+            <div class="modal-body">
+                <app-price-table></app-price-table>
+            </div>
+        </div>
+    </div>
+</div>

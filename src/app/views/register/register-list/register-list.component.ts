@@ -6,7 +6,7 @@ import { EntranceService } from 'app/service/entrance/entrance.service';
 import { VehicleService } from 'app/service/vehicle/vehicle.service';
 import { GenericListComponent } from 'app/views/generic/generic-list/generic-list.component';
 import { Observable } from 'rxjs';
-import { VehicleExitComponent } from '../vehicle-exit/vehicle-exit.component';
+import { VehicleExitComponent } from 'app/shared/vehicle-exit/vehicle-exit.component';
 
 @Component({
   selector: 'app-register-list',

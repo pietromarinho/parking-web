@@ -81,10 +81,6 @@ mat-header-row * {
     margin: 0;
 }
 
-.info label {
-    color: #D2AD45;
-}
-
 .info h5 {
     font-size: 1.1em;
 }

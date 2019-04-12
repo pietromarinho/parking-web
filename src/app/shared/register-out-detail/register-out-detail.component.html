@@ -1,13 +1,13 @@
-<div class="modal fade generic-modal" id="vehicleEntranceModal" tabindex="-1" role="dialog"
-  aria-labelledby="vehicleEntranceModalLabel" aria-hidden="true">
+<div class="modal fade generic-modal" id="registerOutDetailModal" tabindex="-1" role="dialog"
+  aria-labelledby="registerOutDetailModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
 
       <div class="card-header card-header-icon" data-background-color="parking">
-        <i class="material-icons">add</i>
+        <i class="material-icons">remove_red_eye</i>
       </div>
       <h5 class="modal-title">
-        <strong>Entrada de veículo</strong>
+        <strong>Detalhes</strong>
       </h5>
 
       <div class="modal-body">
@@ -17,30 +17,33 @@
           <div class="col-sm-4">
             <div class="info">
               <label>Placa</label>
-              <h5> {{vehicle.plate}} </h5>
+              <h5> {{register.car?.plate}} </h5>
               <hr>
             </div>
           </div>
-
           <div class="col-sm-4">
             <div class="info">
               <label>Marca</label>
-              <h5> {{vehicle.manufacturer}} </h5>
+              <h5> {{register.car?.manufacturer}} </h5>
               <hr>
             </div>
           </div>
           <div class="col-sm-4">
             <div class="info">
               <label>Modelo</label>
-              <h5> {{vehicle.model}} </h5>
+              <h5> {{register.car?.model}} </h5>
+              <hr>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="info">
+              <label>Cor</label>
+              <h5> {{register.car?.color}} </h5>
               <hr>
             </div>
           </div>
         </div>
         <div class="row btn-space">
-          <button (click)="updateOrCreate('#vehicleEntranceModal')" type=" submit"
-            class='btn btn-finish btn-fill btn-round btn-parking pull-right'>Gerar saída</button>
-
           <button (click)="closeModal()" type="button" class='btn btn-round  pull-right'>Voltar</button>
         </div>
       </div>

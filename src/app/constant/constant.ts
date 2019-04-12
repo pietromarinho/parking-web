@@ -1,5 +1,5 @@
-// export const WS_URL = 'http://localhost:7500/parking/';
-export const WS_URL = 'http://10.10.2.60:8080/parking/';
+export const WS_URL = 'http://localhost:7500/parking/';
+// export const WS_URL = 'http://10.10.2.60:8080/parking/';
 // export const DATE_API = 'http://worldclockapi.com/api/json/est/now';
 
 export const Constant = {

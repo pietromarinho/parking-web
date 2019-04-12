@@ -11,20 +11,20 @@ import { AppRoutes } from './app.routing';
 import { AdminLayoutComponent } from './layouts/admin/admin-layout.component';
 import { AuthLayoutComponent } from './layouts/auth/auth-layout.component';
 import { CpfService } from './service/cpf/cpf.service';
+import { EntranceService } from './service/entrance/entrance.service';
 import { FileService } from './service/file/file.service';
 import { LoaderService } from './service/loader/loader-service';
+import { PriceService } from './service/price/price.service';
 import { RestService } from './service/rest/rest.service';
 import { ErrorService } from './service/toast-notification-service/error-service/error.service';
 import { ToastService } from './service/toast-notification-service/toast-service/toast.service';
+import { VehicleService } from './service/vehicle/vehicle.service';
 import { FixedpluginModule } from './shared/fixedplugin/fixedplugin.module';
 import { FooterModule } from './shared/footer/footer.module';
 import { LoadingComponent } from './shared/loading/loading.component';
 import { MadiaAttachmentModule } from './shared/media-attachment/media-attachment.component';
 import { NavbarModule } from './shared/navbar/navbar.module';
 import { SidebarModule } from './sidebar/sidebar.module';
-import { VehicleService } from './service/vehicle/vehicle.service';
-import { PriceService } from './service/price/price.service';
-import { EntranceService } from './service/entrance/entrance.service';
 
 export function httpFactory(xhrBackend: XHRBackend, requestOptions: RequestOptions, loaderService: LoaderService): Http {
   return new InterceptedHttp(xhrBackend, requestOptions, loaderService);

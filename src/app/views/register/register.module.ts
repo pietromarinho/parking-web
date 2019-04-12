@@ -8,6 +8,7 @@ import { MaterialModule } from 'app/app.module';
 import { RegisterListComponent } from './register-list/register-list.component';
 import { VehicleExitComponent } from './vehicle-exit/vehicle-exit.component';
 import { RegisterOutListComponent } from './register-out-list/register-out-list.component';
+import { RegisterOutDetailModule } from 'app/shared/register-out-detail/register-out-detail.component';
 
 @NgModule({
   imports: [
@@ -17,6 +18,7 @@ import { RegisterOutListComponent } from './register-out-list/register-out-list.
     ReactiveFormsModule,
     MdModule,
     MaterialModule,
+    RegisterOutDetailModule
   ],
   declarations: [RegisterListComponent, VehicleExitComponent, RegisterOutListComponent]
 })

@@ -41,7 +41,7 @@ export const ROUTES: RouteInfo[] = [
         icontype: 'person',
         collapse: 'Registros',
         children: [
-            { path: 'parked_cars', title: 'Carros Estacionados', ab: 'CE' },
+            { path: 'parked_cars', title: 'Veículos Estacionados', ab: 'CE' },
             { path: 'historic', title: 'Histórico', ab: 'H' },
         ]
     },

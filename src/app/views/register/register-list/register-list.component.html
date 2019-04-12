@@ -47,9 +47,9 @@
                 <ng-container matColumnDef="acoes">
                   <mat-header-cell class="text-right" *matHeaderCellDef> Ações </mat-header-cell>
                   <mat-cell class="text-right acoes" *matCellDef="let item">
-                    <button (click)="showExitModal(item)" class="btn btn-simple btn-info btn-icon edit"
-                      matTooltip="Editar" [matTooltipPosition]="'left'">
-                      <i class="material-icons">edit</i>
+                    <button (click)="showExitModal(item)" class="btn btn-simple btn-danger btn-icon edit"
+                      matTooltip="Gerar Saída" [matTooltipPosition]="'left'">
+                      <i class="material-icons">input</i>
                     </button>
                   </mat-cell>
                 </ng-container>

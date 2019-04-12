@@ -8,43 +8,66 @@
       </div>
       <h5 class="modal-title">
         <strong>Detalhes</strong>
+
+        <button type="button" class="close fix-close" data-dismiss="modal" aria-hidden="true">
+          <i class="material-icons">clear</i>
+        </button>
       </h5>
 
       <div class="modal-body">
 
 
         <div class="row">
-          <div class="col-sm-4">
+          <div class="col-sm-3">
             <div class="info">
               <label>Placa</label>
               <h5> {{register.car?.plate}} </h5>
               <hr>
             </div>
           </div>
-          <div class="col-sm-4">
+          <div class="col-sm-3">
             <div class="info">
               <label>Marca</label>
               <h5> {{register.car?.manufacturer}} </h5>
               <hr>
             </div>
           </div>
-          <div class="col-sm-4">
+          <div class="col-sm-3">
             <div class="info">
               <label>Modelo</label>
               <h5> {{register.car?.model}} </h5>
               <hr>
             </div>
           </div>
-          <div class="col-sm-4">
+          <div class="col-sm-3">
             <div class="info">
               <label>Cor</label>
               <h5> {{register.car?.color}} </h5>
               <hr>
             </div>
           </div>
-        </div>
-        <div class="row btn-space">
-          <button (click)="closeModal()" type="button" class='btn btn-round  pull-right'>Voltar</button>
+
+          <div class="col-sm-4">
+            <div class="info">
+              <label>Hora de entrada</label>
+              <h5> {{getHourEntrance(register.entering)}} h</h5>
+              <hr>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="info">
+              <label>Hora da saída</label>
+              <h5> {{getHourEntrance(register.exiting)}} h</h5>
+              <hr>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="info">
+              <label>Total pago</label>
+              <h5>R$ {{register.total}}</h5>
+              <hr>
+            </div>
+          </div>
         </div>
       </div>
     </div>

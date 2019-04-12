@@ -12,17 +12,32 @@ declare var $: any;
   styleUrls: ['./register-out-detail.component.scss']
 })
 export class RegisterOutDetailComponent {
-
   register: Entrance = new Entrance();
 
-  public initModal(registerOut: Entrance): void {
-    console.log(registerOut);
-    this.register = registerOut;
+  constructor(
+    private entranceService: EntranceService,
+  ) { }
+
+
+  public initModal(registerOutId: string): void {
+    this.getEntrance(registerOutId);
     $('#registerOutDetailModal').modal('show');
   }
 
   closeModal(): void {
     $('#registerOutDetailModal').modal('hide');
+  }
+
+  getEntrance(id: string) {
+    this.entranceService.getOne(id).subscribe(
+      success => {
+        this.register = success;
+      }
+    );
+  }
+
+  getHourEntrance(date: Date) {
+    return new Date(date).toLocaleTimeString().replace(/([\d]+:[\d]{2})(:[\d]{2})(.*)/, "$1$3");
   }
 
 }

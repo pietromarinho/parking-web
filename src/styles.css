@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body {
+.wrapper{
     background-color: #4f4f4f;
 }
 
@@ -81,10 +81,6 @@ mat-header-row * {
     margin: 0;
 }
 
-.info label {
-    color: #D2AD45;
-}
-
 .info h5 {
     font-size: 1.1em;
 }
@@ -92,6 +88,10 @@ mat-header-row * {
 .fix-close {
     margin: 8px;
     color: #000 !important;
+    z-index: 9999;
+    position: absolute;
+    top: 0;
+    right: 0;
 }
 
 .fix-close::hover {

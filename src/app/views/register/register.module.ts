@@ -6,7 +6,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MdModule } from 'app/md/md.module';
 import { MaterialModule } from 'app/app.module';
 import { RegisterListComponent } from './register-list/register-list.component';
-import { VehicleExitComponent } from './vehicle-exit/vehicle-exit.component';
+import { VehicleExitComponent } from '../../shared/vehicle-exit/vehicle-exit.component';
 import { RegisterOutListComponent } from './register-out-list/register-out-list.component';
 import { RegisterOutDetailModule } from 'app/shared/register-out-detail/register-out-detail.component';
 

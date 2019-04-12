@@ -1,9 +1,9 @@
 import { Location } from '@angular/common';
-import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
-import swal from 'sweetalert2';
 import { ROUTES } from '../.././sidebar/sidebar.component';
+import { EntranceService } from 'app/service/entrance/entrance.service';
 
 
 const misc: any = {
@@ -18,22 +18,19 @@ declare var $: any;
     templateUrl: 'navbar.component.html'
 })
 
-export class NavbarComponent implements OnInit, AfterViewInit {
+export class NavbarComponent implements OnInit {
     private listTitles: any[];
     location: Location;
     private nativeElement: Node;
     private toggleButton: any;
     private sidebarVisible: boolean;
     opened: Boolean = false;
-    userId: String = '';
-    oldPass: String = '';
-    newPass: String = '';
-    confirmPass: String = '';
     private _router: Subscription;
 
     @ViewChild('app-navbar-cmp') button: any;
 
     constructor(
+        private entranceService: EntranceService,
         location: Location,
         private element: ElementRef,
         private router: Router,
@@ -117,18 +114,6 @@ export class NavbarComponent implements OnInit, AfterViewInit {
         });
     }
 
-    ngAfterViewInit(): void {
-        $('#changeMyPassModal').on('show.bs.modal', () => {
-            this.oldPass = '';
-            this.newPass = '';
-            this.confirmPass = '';
-            this.opened = true;
-        });
-        $('#changeMyPassModal').on('hide.bs.modal', () => {
-            this.opened = false;
-        });
-    }
-
     onResize(event) {
         if ($(window).width() > 991) {
             return false;
@@ -152,8 +137,6 @@ export class NavbarComponent implements OnInit, AfterViewInit {
         body.classList.remove('nav-open');
     };
     sidebarToggle() {
-        // const toggleButton = this.toggleButton;
-        // const body = document.getElementsByTagName('body')[0];
         if (this.sidebarVisible === false) {
             this.sidebarOpen();
         } else {
@@ -181,64 +164,14 @@ export class NavbarComponent implements OnInit, AfterViewInit {
         return this.location.prepareExternalUrl(this.location.path());
     }
 
-    goToProfile(): void {
-        this.router.navigate([`/configuracoes/perfil/`]);
-    }
 
-
-    showChangePass() {
-        setTimeout(() => $('#changeMyPassModal').modal('show'), 100);
-    }
-
-    cofirmExit(): void {
-        swal({
-            title: 'Deseja sair da aplicação?',
-            type: 'warning',
-            showCancelButton: true,
-            confirmButtonClass: 'btn btn-success',
-            cancelButtonClass: 'btn btn-danger',
-            confirmButtonText: 'Sim',
-            cancelButtonText: 'Não',
-            buttonsStyling: false
-        }).then(() => {
-            this.logout();
-        }).catch(swal.noop);
-    }
-
-    changeMyPassword() {
-        // this.changePass.oldPassword = shajs('sha256').update(this.oldPass).digest('hex');
-        // this.changePass.password = shajs('sha256').update(this.newPass).digest('hex');
-        // this.changePass.token = this.userId;
-        // this.loginService.changePassword(this.changePass).subscribe(
-        //     success => {
-        //         this.closeModal();
-        //         ToastService.show('Senha alterada. É necessário logar novamente!', MessageType.SUCCESS);
-        //         this.logout();
-        //     },
-        //     error => {
-        //         console.log(error);
-        //     }
-        // );
+    showPriceDetails() {
+        this.opened = true;
+        setTimeout(() => $('#priceDetailsModal').modal('show'), 100);
     }
 
     closeModal(): void {
-        this.oldPass = '';
-        this.newPass = '';
-        this.confirmPass = '';
-        $('#changeMyPassModal').modal('hide');
-    }
-
-    verifyPass(): boolean {
-        if (this.newPass.length < 6 || this.confirmPass.length < 6) {
-            return false;
-        } else if (this.newPass === this.confirmPass) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    logout(): void {
-        // this.security.logOut();
+        this.opened = false;
+        $('#priceDetailsModal').modal('hide');
     }
 }

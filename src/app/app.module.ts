@@ -25,6 +25,7 @@ import { LoadingComponent } from './shared/loading/loading.component';
 import { MadiaAttachmentModule } from './shared/media-attachment/media-attachment.component';
 import { NavbarModule } from './shared/navbar/navbar.module';
 import { SidebarModule } from './sidebar/sidebar.module';
+import { PeriodComponent } from './reports/period/period.component';
 
 export function httpFactory(xhrBackend: XHRBackend, requestOptions: RequestOptions, loaderService: LoaderService): Http {
   return new InterceptedHttp(xhrBackend, requestOptions, loaderService);
@@ -88,6 +89,7 @@ export class MaterialModule { }
     AdminLayoutComponent,
     AuthLayoutComponent,
     LoadingComponent,
+    PeriodComponent
   ],
   providers: [
     {

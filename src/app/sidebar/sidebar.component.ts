@@ -26,7 +26,7 @@ export interface ChildrenItems {
 export const ROUTES: RouteInfo[] = [
     {
         path: '/dashboard',
-        title: 'Dashboard',
+        title: 'Tabela de Preços',
         type: 'link',
         icontype: 'dashboard'
     }, {

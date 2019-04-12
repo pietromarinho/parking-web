@@ -6,6 +6,7 @@ import { MaterialModule } from 'app/app.module';
 import { MdModule } from 'app/md/md.module';
 import { DashboardRouter } from './dashboard.routing';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { PriceTableModule } from 'app/shared/price-table/price-table.component';
 
 @NgModule({
   imports: [
@@ -15,6 +16,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     ReactiveFormsModule,
     MdModule,
     MaterialModule,
+    PriceTableModule
   ],
   declarations: [DashboardComponent]
 })

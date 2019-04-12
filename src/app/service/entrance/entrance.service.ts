@@ -25,7 +25,7 @@ export class EntranceService extends CrudService<Entrance> {
   }
 
   public generateReport(): Observable<Entrance[]> {
-    const url = `${this.baseURL}report?start=${'2019-04-10'};end=${'2019-04-12'}`;
+    const url = `${this.baseURL}report?start=${'2019-04-10'}&end=${'2019-04-12'}`;
     return this.get(url);
   }
 

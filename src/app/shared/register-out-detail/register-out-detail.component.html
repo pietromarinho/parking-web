@@ -18,21 +18,21 @@
 
 
         <div class="row">
-          <div class="col-sm-4">
+          <div class="col-sm-3">
             <div class="info">
               <label>Placa</label>
               <h5> {{register.car?.plate}} </h5>
               <hr>
             </div>
           </div>
-          <div class="col-sm-4">
+          <div class="col-sm-3">
             <div class="info">
               <label>Marca</label>
               <h5> {{register.car?.manufacturer}} </h5>
               <hr>
             </div>
           </div>
-          <div class="col-sm-4">
+          <div class="col-sm-3">
             <div class="info">
               <label>Modelo</label>
               <h5> {{register.car?.model}} </h5>
@@ -47,21 +47,21 @@
             </div>
           </div>
 
-          <div class="col-sm-3">
+          <div class="col-sm-4">
             <div class="info">
               <label>Hora de entrada</label>
               <h5> {{getHourEntrance(register.entering)}} h</h5>
               <hr>
             </div>
           </div>
-          <div class="col-sm-3">
+          <div class="col-sm-4">
             <div class="info">
-              <label>Hora de entrada</label>
-              <h5> {{getHourEntrance(register.entering)}} h</h5>
+              <label>Hora da saída</label>
+              <h5> {{getHourEntrance(register.exiting)}} h</h5>
               <hr>
             </div>
           </div>
-          <div class="col-sm-3">
+          <div class="col-sm-4">
             <div class="info">
               <label>Total pago</label>
               <h5>R$ {{register.total}}</h5>

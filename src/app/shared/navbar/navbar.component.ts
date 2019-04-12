@@ -170,14 +170,6 @@ export class NavbarComponent implements OnInit {
         setTimeout(() => $('#priceDetailsModal').modal('show'), 100);
     }
 
-    showReport() {
-        this.entranceService.generateReport().subscribe(
-            a => {
-                console.log(a);
-            }
-        );
-    }
-
     closeModal(): void {
         this.opened = false;
         $('#priceDetailsModal').modal('hide');

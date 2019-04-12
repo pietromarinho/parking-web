@@ -88,6 +88,10 @@ mat-header-row * {
 .fix-close {
     margin: 8px;
     color: #000 !important;
+    z-index: 9999;
+    position: absolute;
+    top: 0;
+    right: 0;
 }
 
 .fix-close::hover {

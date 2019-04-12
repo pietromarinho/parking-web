@@ -39,10 +39,32 @@
               <hr>
             </div>
           </div>
-          <div class="col-sm-4">
+          <div class="col-sm-3">
             <div class="info">
               <label>Cor</label>
               <h5> {{register.car?.color}} </h5>
+              <hr>
+            </div>
+          </div>
+
+          <div class="col-sm-3">
+            <div class="info">
+              <label>Hora de entrada</label>
+              <h5> {{getHourEntrance(register.entering)}} h</h5>
+              <hr>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="info">
+              <label>Hora de entrada</label>
+              <h5> {{getHourEntrance(register.entering)}} h</h5>
+              <hr>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="info">
+              <label>Total pago</label>
+              <h5>R$ {{register.total}}</h5>
               <hr>
             </div>
           </div>

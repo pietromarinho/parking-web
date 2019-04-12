@@ -24,17 +24,31 @@ export class VehicleExitComponent extends GenericFormComponent<Entrance, Entranc
     super(router, activatedRoute, service, location, Entrance);
   }
 
-  public initModal(vehicleEntrance?: Entrance): void {
-    this.edit = true;
-    console.log(vehicleEntrance);
-    Object.assign(this.obj, vehicleEntrance);
-    this.obj.type = EntranceExit.OUT;
-    console.log(this.obj);
+  public initModal(vehicleEntranceId: string): void {
+    this.edit = false;
+    this.getEntrance(vehicleEntranceId);
     $('#vehicleExitModal').modal('show');
   }
 
   closeModal(): void {
     $('#vehicleExitModal').modal('hide');
+  }
+
+  getEntrance(id: string) {
+    this.service.getOne(id).subscribe(
+      success => {
+        this.obj = success;
+      }
+    );
+  }
+
+  beforeSave() {
+    this.obj.id = '';
+    this.obj.type = EntranceExit.OUT;
+  }
+
+  getHourEntrance(date: Date) {
+    return new Date(date).toLocaleTimeString().replace(/([\d]+:[\d]{2})(:[\d]{2})(.*)/, "$1$3");
   }
 
 }

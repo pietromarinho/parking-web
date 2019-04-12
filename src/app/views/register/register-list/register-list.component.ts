@@ -31,7 +31,7 @@ export class RegisterListComponent extends GenericListComponent<Entrance, Entran
   }
 
   showExitModal(entrance: Entrance) {
-    this.vehicleExitModal.initModal(entrance);
+    this.vehicleExitModal.initModal(entrance.id);
   }
 
 }

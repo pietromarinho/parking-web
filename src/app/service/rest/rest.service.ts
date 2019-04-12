@@ -140,17 +140,6 @@ export class RestService {
     }
   }
 
-  getErrorJwt(msg: any): boolean {
-    const objString = msg.split('/');
-    const obj = JSON.parse(objString);
-    let mesg: String = obj.message;
-    mesg = mesg.substring(0, 11);
-    if (mesg === 'JWT expired') {
-      return true;
-    }
-    return false;
-  }
-
   public handleError(error: Response | any) {
     let errMsg: string;
 
@@ -166,8 +155,6 @@ export class RestService {
       } else {
         errMsg = body._body;
       }
-    } else if (error._body) {
-      errMsg = this.setLoginFeedBack(error._body);
     } else {
       errMsg = error._body;
     }
@@ -189,18 +176,5 @@ export class RestService {
 
   insertParam(baseUrl, key, value) {
     return Util.insertRequestParam(baseUrl, key, value);
-  }
-
-  setLoginFeedBack(msg: string) {
-    switch (msg) {
-      case 'user.password.mismatch':
-        return 'Nome de Usuário ou senha inválidos.';
-      case 'user.disabled':
-        return 'Este usuário está desativado.';
-      case 'username.not.found':
-        return 'Usuário não encontrado.';
-      default:
-        return msg;
-    }
   }
 }

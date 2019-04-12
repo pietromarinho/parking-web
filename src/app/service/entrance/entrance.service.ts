@@ -17,11 +17,16 @@ export class EntranceService extends CrudService<Entrance> {
   }
 
   public getTypeOut(): Observable<Entrance[]> {
-    return this.get(`${this.baseURL}search?query=type==${'OUT'}`);
+    return this.get(`${this.baseURL}search?query=type==${'OUT'}&valid==true`);
   }
 
   public getTypeIn(): Observable<Entrance[]> {
-    return this.get(`${this.baseURL}search?query=type==${'IN'}`);
+    return this.get(`${this.baseURL}search?query=type==${'IN'};valid==true`);
+  }
+
+  public generateReport(): Observable<Entrance[]> {
+    const url = `${this.baseURL}report?start=${'2019-04-10'};end=${'2019-04-12'}`;
+    return this.get(url);
   }
 
 }

@@ -42,10 +42,24 @@
               <hr>
             </div>
           </div>
+          <div class="col-sm-4">
+            <div class="info">
+              <label>Hora de entrada</label>
+              <h5> {{getHourEntrance(obj.entering)}} h</h5>
+              <hr>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="info">
+              <label>Total a pagar</label>
+              <h5>R$ {{obj.total}}</h5>
+              <hr>
+            </div>
+          </div>
         </div>
         <div class="row btn-space">
           <button (click)="updateOrCreate('#vehicleExitModal')" type=" submit"
-            class='btn btn-finish btn-fill btn-round btn-parking pull-right'>Gerar acesso</button>
+            class='btn btn-finish btn-fill btn-round btn-parking pull-right'>Gerar saída</button>
 
           <button (click)="closeModal()" type="button" class='btn btn-round  pull-right'>Voltar</button>
         </div>

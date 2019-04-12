@@ -31,7 +31,7 @@ export class RegisterOutListComponent extends GenericListComponent<Entrance, Ent
 
 
   showRegisterOutDetailModal(entrance: Entrance) {
-    this.registerOutDetailModal.initModal(entrance);
+    this.registerOutDetailModal.initModal(entrance.id);
   }
 
 }

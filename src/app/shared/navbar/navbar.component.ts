@@ -1,9 +1,9 @@
 import { Location } from '@angular/common';
-import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
-import swal from 'sweetalert2';
 import { ROUTES } from '../.././sidebar/sidebar.component';
+import { EntranceService } from 'app/service/entrance/entrance.service';
 
 
 const misc: any = {
@@ -30,6 +30,7 @@ export class NavbarComponent implements OnInit {
     @ViewChild('app-navbar-cmp') button: any;
 
     constructor(
+        private entranceService: EntranceService,
         location: Location,
         private element: ElementRef,
         private router: Router,
@@ -167,6 +168,14 @@ export class NavbarComponent implements OnInit {
     showPriceDetails() {
         this.opened = true;
         setTimeout(() => $('#priceDetailsModal').modal('show'), 100);
+    }
+
+    showReport() {
+        this.entranceService.generateReport().subscribe(
+            a => {
+                console.log(a);
+            }
+        );
     }
 
     closeModal(): void {
